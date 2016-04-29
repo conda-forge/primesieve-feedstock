@@ -12,7 +12,7 @@ source:
 build:
   # Seem to be encountering hangs on Windows with Python 2.7; so, they are skipped.
   skip: true  # [win and py2k]
-  number: 1
+  number: 2
 
 build:
   features:
@@ -21,11 +21,11 @@ build:
 
 requirements:
   build:
-    - gcc     # [osx]
+    - gcc     # [unix]
     - python  # [win]
 
   run:
-    - libgcc  # [osx]
+    - libgcc  # [unix]
 
 test:
   requires:
