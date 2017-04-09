@@ -11,11 +11,12 @@ source:
 
 build:
   # Seem to be encountering hangs on Windows with Python 2.7; so, they are skipped.
-  skip: true  # [win and py2k]
+  skip: true  # [win and (py2k or py36)]
   number: 3
   features:
     - vc10              # [win and py34]
     - vc14              # [win and py35]
+    - vc14              # [win and py36]
 
 requirements:
   build:
