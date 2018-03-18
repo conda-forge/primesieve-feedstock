@@ -1,4 +1,4 @@
-{% set version = "5.6.0" %}
+{% set version = "5.7.3" %}
 
 package:
   name: primesieve
@@ -7,12 +7,12 @@ package:
 source:
   fn: primesieve-{{ version }}.tar.gz
   url: https://dl.bintray.com/kimwalisch/primesieve/primesieve-{{ version }}.tar.gz
-  sha1: 86d0fb98c7e1d6bc47e1923138de3d0c0eb4904c
+  sha1: c8221ebe49e918523c753e644cbaa7e5389e6d04
 
 build:
   # Seem to be encountering hangs on Windows with Python 2.7; so, they are skipped.
   skip: true  # [win and (py2k or py36)]
-  number: 4
+  number: 0
   features:
     - vc10              # [win and py34]
     - vc14              # [win and py35]
