@@ -1,4 +1,4 @@
-{% set version = "5.7.3" %}
+{% set version = "7.6" %}
 
 package:
   name: primesieve
@@ -6,41 +6,38 @@ package:
 
 source:
   fn: primesieve-{{ version }}.tar.gz
-  url: https://dl.bintray.com/kimwalisch/primesieve/primesieve-{{ version }}.tar.gz
-  sha1: c8221ebe49e918523c753e644cbaa7e5389e6d04
+  url: https://github.com/kimwalisch/primesieve/archive/refs/tags/v{{ version }}.tar.gz
+  sha256: 485669e8f9a6c74e528947d274df705f13caaf276d460d0f037b8dbc0c9c0a99
 
 build:
-  # Seem to be encountering hangs on Windows with Python 2.7; so, they are skipped.
-  skip: true  # [win and (vc<14 or py36)]
-  number: 1001
+  number: 0
+  run_exports:
+    - {{ pin_subpackage('primesieve', max_pin='x.x') }}
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-  host:
-
-  run:
+    - cmake
 
 test:
-  requires:
-    - python  # [win]
-
   commands:
     # Check libraries exist
-    - test -f "${PREFIX}/lib/libprimesieve.a"      # [unix]
-    - test -f "${PREFIX}/lib/libprimesieve.so"     # [linux]
-    - test -f "${PREFIX}/lib/libprimesieve.dylib"  # [osx]
+    - test -f "${PREFIX}/include/primesieve.h"  # [unix]
+    - test -f "${PREFIX}/lib/libprimesieve${SHLIB_EXT}"  # [unix]
+    - if not exist %PREFIX%\\Library\\include\\primesieve.h exit 1  # [win]
+    - if not exist %PREFIX%\\Library\\bin\\primesieve.dll exit 1  # [win]
 
     # Test CLIs.
     - primesieve -n 1
 
 about:
   home: http://primesieve.org/
-  license: BSD 2-Clause
+  license: BSD-2-Clause
   license_file: COPYING
   summary: Fast C/C++ prime number generator
 
 extra:
   recipe-maintainers:
     - jakirkham
+    - jschueller

@@ -1,17 +1,10 @@
-nmake /f Makefile.msvc
+cmake -LAH -G"NMake Makefiles"                               ^
+    -DCMAKE_INSTALL_PREFIX="%LIBRARY_PREFIX%" -DBUILD_TESTS=ON -DBUILD_STATIC_LIBS=OFF .
 if errorlevel 1 exit 1
 
-nmake /f Makefile.msvc check
+cmake --build . --config Release --target install
 if errorlevel 1 exit 1
 
-cp include\primesieve.h %LIBRARY_INC%
+ctest --output-on-failure
 if errorlevel 1 exit 1
 
-cp include\primesieve.hpp %LIBRARY_INC%
-if errorlevel 1 exit 1
-
-cp primesieve.lib %LIBRARY_LIB%
-if errorlevel 1 exit 1
-
-cp primesieve.exe %LIBRARY_BIN%
-if errorlevel 1 exit 1
