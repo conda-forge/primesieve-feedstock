@@ -10,7 +10,7 @@ source:
   sha256: 0cd0490259e6e919c6e3dd3f3e69ac6d91e6cbe616e22a219abe4006d9293d5d
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('primesieve', max_pin='x.x') }}
 
