@@ -1,4 +1,4 @@
-{% set version = "7.9" %}
+{% set version = "8.0" %}
 
 package:
   name: primesieve
@@ -7,7 +7,7 @@ package:
 source:
   fn: primesieve-{{ version }}.tar.gz
   url: https://github.com/kimwalisch/primesieve/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: c567f2a1a9d46a70020f920eb2c794142528a31a055995500e7fcb19642b7c91
+  sha256: 9fba723221535dbf1e30c582c5009eeb032464704da01a0c8541d8cf2a698803
 
 build:
   number: 0
