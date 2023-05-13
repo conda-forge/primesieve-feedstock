@@ -1,11 +1,11 @@
-About primesieve
-================
+About primesieve-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/primesieve-feedstock/blob/main/LICENSE.txt)
 
 Home: http://primesieve.org/
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/primesieve-feedstock/blob/main/LICENSE.txt)
 
 Summary: Fast C/C++ prime number generator
 
