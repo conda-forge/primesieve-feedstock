@@ -1,4 +1,4 @@
-{% set version = "12.8" %}
+{% set version = "12.10" %}
 
 package:
   name: primesieve
@@ -7,7 +7,7 @@ package:
 source:
   fn: primesieve-{{ version }}.tar.gz
   url: https://github.com/kimwalisch/primesieve/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: a0bf618a60a6b815c628196da9cb47e878e1414a06b4025acc5a1f9050223282
+  sha256: 0068ac9ec1cf0ca29ffb291060813608985e1921f9d702bf613343f84cb03dca
   patches:
     # https://github.com/kimwalisch/primesieve/pull/146
     - pthread.patch
