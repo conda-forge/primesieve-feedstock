@@ -13,7 +13,7 @@ source:
     - pthread.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage('primesieve', max_pin='x.x') }}
 
@@ -24,6 +24,7 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make  # [unix]
+    - ninja  # [win]
 
 test:
   commands:
