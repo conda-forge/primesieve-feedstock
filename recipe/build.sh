@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cmake ${CMAKE_ARGS} -DCMAKE_INSTALL_PREFIX=${PREFIX} -DBUILD_STATIC_LIBS=OFF -DBUILD_TESTS=ON -DCMAKE_INSTALL_LIBDIR=lib .
+cmake ${CMAKE_ARGS} -DBUILD_STATIC_LIBS=OFF -DBUILD_TESTS=ON .
 make install -j${CPU_COUNT}
 if test "${host_alias}" == "${build_alias}"
 then
