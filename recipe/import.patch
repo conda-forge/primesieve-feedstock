@@ -1,0 +1,13 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 29fb63aa..dd3cb5cf 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -149,7 +149,7 @@ if(BUILD_SHARED_LIBS)
+     set_target_properties(libprimesieve PROPERTIES VERSION ${PROJECT_VERSION})
+     target_compile_definitions(libprimesieve PRIVATE ${PRIMESIEVE_COMPILE_DEFINITIONS})
+ 
+-    if(WIN32_MSVC_COMPATIBLE)
++    if(0)
+         # On Windows the shared library will be named primesieve.dll
+         # and the associated import library will be named
+         # primesieve.lib. This is an issue as the static library
